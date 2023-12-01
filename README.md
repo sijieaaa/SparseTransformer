@@ -23,9 +23,9 @@ pip install torch_sparse
 ```
 
 ## 2.Compile sptr
-    ```
-    python3 setup.py install
-    ```
+```
+python3 setup.py install
+```
 
 
 ## 3. Usage
