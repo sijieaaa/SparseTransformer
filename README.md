@@ -17,6 +17,8 @@ or
 ```
 pip install torch_scatter==2.0.9
 pip install torch_geometric==1.7.2
+pip install torch_cluster
+pip install torch_sparse
 ```
 
 ### Compile sptr
