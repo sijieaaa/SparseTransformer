@@ -23,7 +23,7 @@ def grid_sample(pos, batch, size, start, return_p2v=True, return_counts=True, re
     # size: float [3, ]
     # start: float [3, ] / None
 
-    cluster = voxel_grid(pos, batch, size, start=start) #[N, ]
+    cluster = voxel_grid(pos=pos, batch=batch, size=size, start=start) #[N, ]
 
     if return_p2v == False and return_counts == False:
         unique, cluster = torch.unique(cluster, sorted=True, return_inverse=True)
