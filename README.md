@@ -9,6 +9,7 @@
 
 ## Installation
 ### Install Dependency
+torch_geometric >= 2.4.0
 ```
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric torch_scatter torch_sparse torch_cluster -f https://data.pyg.org/whl/torch-2.1.0+cu118.html
