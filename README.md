@@ -1,11 +1,11 @@
 # SpTr: PyTorch Spatially Sparse Transformer Library
 
-<div align="center">
-  <img src="figs/sparse_transformer.png"/>
-</div>
-
-**SparseTransformer (SpTr)** provides a **fast**, **memory-efficient**, and **easy-to-use** implementation for sparse transformer with **varying token numbers** (e.g., window transformer for 3D point cloud).
-
+Fix some bugs in the original sptr.
+This repo supports:
+```
+torch >= 2.0
+torch_geometric >= 2.4.0
+```
 
 ## Installation
 ### Install Dependency
