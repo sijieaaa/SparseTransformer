@@ -32,26 +32,32 @@ python3 setup.py install
 SpTr can be easily used in most current transformer-based 3D point cloud networks, with only several minor modifications. First, define the attention module `sptr.VarLengthMultiheadSA`. Then, wrap the input features and indices into `sptr.SparseTrTensor`, and forward it into the module. That's all. A simple example is as follows. For more complex usage, you can refer to the code of above works (e.g., SphereFormer, StratifiedFormer).
 ### Example
 ```
+import torch
+import numpy as np
 import sptr
 
 # Define module
 dim = 48
+
 num_heads = 3
 indice_key = 'sptr_0'
-window_size = np.array([0.4, 0.4, 0.4])  # can also be integers for voxel-based methods
+window_size = np.array([4, 4, 4])  # can also be integers for voxel-based methods
 shift_win = False  # whether to adopt shifted window
-self.attn = sptr.VarLengthMultiheadSA(
+attn = sptr.VarLengthMultiheadSA(
     dim, 
     num_heads, 
     indice_key, 
     window_size, 
     shift_win
-)
+).cuda()
 
 # Wrap the input features and indices into SparseTrTensor. Note: indices can be either intergers for voxel-based methods or floats (i.e., xyz) for point-based methods
 # feats: [N, C], indices: [N, 4] with batch indices in the 0-th column
+feats = torch.rand(100, dim).cuda()
+xyzs = torch.randint(0, 100, (100, 3)).cuda()
+indices = torch.cat((torch.zeros_like(xyzs[:, :1]), xyzs), dim=1).cuda()
 input_tensor = sptr.SparseTrTensor(feats, indices, spatial_shape=None, batch_size=None)
-output_tensor = self.attn(input_tensor)
+output_tensor = attn(input_tensor)
 
 # Extract features from output tensor
 output_feats = output_tensor.query_feats
