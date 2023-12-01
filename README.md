@@ -63,36 +63,3 @@ output_tensor = attn(input_tensor)
 output_feats = output_tensor.query_feats
 ```
 
-## Authors
-
-Xin Lai (a Ph.D student at CSE CUHK, xinlai@cse.cuhk.edu.hk) - Initial CUDA implementation, maintainance.
-
-Fanbin Lu (a Ph.D student at CSE CUHK) - Improve CUDA implementation, maintainance.
-
-Yukang Chen (a Ph.D student at CSE CUHK) - Maintainance. 
-
-
-## Cite
-
-If you find this project useful, please consider citing
-```
-@inproceedings{lai2023spherical,
-  title={Spherical Transformer for LiDAR-based 3D Recognition},
-  author={Lai, Xin and Chen, Yukang and Lu, Fanbin and Liu, Jianhui and Jia, Jiaya},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  year={2023}
-}
-```
-```
-@inproceedings{lai2022stratified,
-  title={Stratified transformer for 3d point cloud segmentation},
-  author={Lai, Xin and Liu, Jianhui and Jiang, Li and Wang, Liwei and Zhao, Hengshuang and Liu, Shu and Qi, Xiaojuan and Jia, Jiaya},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={8500--8509},
-  year={2022}
-}
-```
-
-## License
-
-This project is licensed under the Apache license 2.0 License.
